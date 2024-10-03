@@ -20,31 +20,32 @@ const ModalButton: React.FC = () => {
         <ModalContent>
           <div className="flex flex-col space-y-1.5 text-center sm:text-left">
             <h2 className="text-lg font-semibold leading-none tracking-tight">
-              Edit profile
+              Make Payment Here
             </h2>
             <p className="text-sm text-muted-foreground">
-              Make changes to your profile here. Click save when you're done.
+              Make Payment to this Account Number
             </p>
+            <span className='font-light text-sm'>After Making the transfer make a screen shot of Your payment and send to this Whatsapp number "<span className='font-medium'>09036804525</span>"</span>
           </div>
           <div className="grid gap-4 py-4">
             <div className="grid grid-cols-4 items-center gap-4">
               <label className="text-sm font-medium leading-none text-right">
-                Name
+                Account
               </label>
               <input
                 className="flex h-9 w-full rounded-md border bg-transparent px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50 col-span-3"
                 id="name"
-                defaultValue="Pedro Duarte"
+                defaultValue="7039256612"
               />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
               <label className="text-sm font-medium leading-none text-right">
-                Username
+                Bank
               </label>
               <input
                 className="flex h-9 w-full rounded-md border bg-transparent px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50 col-span-3"
                 id="username"
-                defaultValue="@peduarte"
+                defaultValue="Opay Bank"
               />
             </div>
           </div>

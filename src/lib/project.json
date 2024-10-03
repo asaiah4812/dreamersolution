@@ -52,15 +52,15 @@
     },
     {
         "id":5,
-        "title": "Project 5",
+        "title": "Babeque Website Build with Nextjs",
         "src": "/project/project5/project.png",
         "src1": "/project/project5/project1.png",
         "src2": "/project/project5/project2.png",
         "src3": "/project/project5/project3.png",
         "shortDesc": "description",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur, quam vitae luctus faucibus, mauris ligula fermentum ex, a volutpat neque nunc at justo. Sed at nunc sed mauris pulvinar fermentum. In hac habitasse platea dictumst.",
+        "desc": "A Babque website built with Next.js and Django offers a powerful and efficient solution for creating a dynamic and scalable online platform. Here's a breakdown of how these technologies can be combined to achieve your goals:Robust Backend: Django provides a solid foundation for building the backend of your Babque website, handling tasks like user authentication, database interactions, and API endpoints.",
         "url": "/project/Project5",
-        "price": 30000
+        "price": 27000
     },
     {
         "id":6,
@@ -72,19 +72,31 @@
         "shortDesc": "description",
         "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur, quam vitae luctus faucibus, mauris ligula fermentum ex, a volutpat neque nunc at justo. Sed at nunc sed mauris pulvinar fermentum. In hac habitasse platea dictumst.",
         "url": "/project/Project6",
-        "price": 30000
+        "price": 18000
     },
     {
-        "id":6,
-        "title": "Project 7",
+        "id":7,
+        "title": "Courage Hospital Management System",
         "src": "/project/project7/project.png",
         "src1": "/project/project7/project1.png",
         "src2": "/project/project7/project2.png",
         "src3": "/project/project7/project3.png",
         "shortDesc": "Courage Hospital Management System",
         "desc": "The Courage Hospital Management System is a comprehensive software solution designed to streamline operations and enhance patient care at Courage Hospital. This user-friendly system offers a wide range of features Efficiently manage patient records, appointments, and medical history.",
-        "url": "/project/Project6",
+        "url": "/project/Project7",
         "price": 29000
+    },
+    {
+        "id":8,
+        "title": "Student Content Management",
+        "src": "/project/project8/project.png",
+        "src1": "/project/project8/project1.png",
+        "src2": "/project/project8/project2.png",
+        "src3": "/project/project8/project3.png",
+        "shortDesc": "Student Content Management System With Ai Integration",
+        "desc": "The Courage Hospital Management System is a comprehensive software solution designed to streamline operations and enhance patient care at Courage Hospital. This user-friendly system offers a wide range of features Efficiently manage patient records, appointments, and medical history.",
+        "url": "/project/Project8",
+        "price": 25000
     }
 ]
 

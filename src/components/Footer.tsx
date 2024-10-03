@@ -119,16 +119,13 @@ const Footer = () => {
                   <Link href="/about">About us</Link>
                 </li>
                 <li className="text-xl font-medium">
-                  <Link href="/services">Our Services</Link>
+                  <Link href="/">Our Services</Link>
                 </li>
                 <li className="text-xl font-medium">
                   <Link href="/projects">Projects</Link>
                 </li>
                 <li className="text-xl font-medium">
-                  <Link href="/blogs">Blogs</Link>
-                </li>
-                <li className="text-xl font-medium">
-                  <Link href="/contact-us">Contact</Link>
+                  <Link href="https://dreamer-blog.vercel.app">Blogs</Link>
                 </li>
               </ul>
               <ul>
@@ -204,7 +201,7 @@ const Footer = () => {
             <span className="font-medium">
               &copy; 2023 DreamerWebdev. All Rights Reserved.
             </span>
-            <a href="#" className="font-semibold">
+            <a href="https://hensonport.vercel.app" className="font-semibold">
               Privacy Policy
             </a>
           </div>

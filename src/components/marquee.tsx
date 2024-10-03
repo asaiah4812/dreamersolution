@@ -7,10 +7,16 @@ function cn(...args: (string | boolean | undefined | null | { [key: string]: any
     .filter(Boolean)
     .map((arg) => {
       if (typeof arg === 'string') return arg;
-      return Object.entries(arg)
-        .filter(([, value]) => Boolean(value))
-        .map(([key]) => key)
-        .join(' ');
+
+      // Add a type guard to ensure arg is an object before calling Object.entries
+      if (typeof arg === 'object' && arg !== null) {
+        return Object.entries(arg)
+          .filter(([, value]) => Boolean(value))
+          .map(([key]) => key)
+          .join(' ');
+      }
+
+      return ''; // Return an empty string if arg is not a valid type
     })
     .join(' ');
 }

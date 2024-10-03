@@ -3,7 +3,7 @@ import { DM_Sans } from "next/font/google";
 import prof from "/public/prof.jpg";
 import img from "/public/image.jpg";
 import Tab from "@/components/Tabs";
-import Social from "@/components/socials";
+import { FloatingDockDemo } from "@/components/Floating";
 
 // Initialize the font
 const dmSans = DM_Sans({ subsets: ["latin"] });
@@ -46,7 +46,7 @@ const Contact: React.FC = () => {
         </div>
       </div>
       <Tab/>
-      <Social/>
+      <FloatingDockDemo/>
     </div>
   );
 };
