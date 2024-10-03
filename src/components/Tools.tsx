@@ -18,7 +18,7 @@ export const projects = [
   {
     title: "HTML",
     description:
-      "A tool Used for this playing content a website",
+      "A tool Used for Displaying content in a website",
     icon:<IoLogoHtml5 className="text-5xl"/>,
   },
   {
