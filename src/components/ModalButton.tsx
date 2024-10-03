@@ -1,8 +1,7 @@
 'use client'
-import React, { useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
-import { FramerModal, ModalContent } from './modal'
 
+import React, { useState } from 'react'
+import { FramerModal, ModalContent } from './modal'
 
 const ModalButton: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false)
@@ -25,26 +24,28 @@ const ModalButton: React.FC = () => {
             <p className="text-sm text-muted-foreground">
               Make Payment to this Account Number
             </p>
-            <span className='font-light text-sm'>After Making the transfer make a screen shot of Your payment and send to this Whatsapp number "<span className='font-medium'>09036804525</span>"</span>
+            <span className="font-light text-sm">
+              After Making the transfer make a screen shot of Your payment and send to this Whatsapp number &ldquo;<span className="font-medium">09036804525</span>&rdquo;
+            </span>
           </div>
           <div className="grid gap-4 py-4">
             <div className="grid grid-cols-4 items-center gap-4">
-              <label className="text-sm font-medium leading-none text-right">
+              <label htmlFor="account" className="text-sm font-medium leading-none text-right">
                 Account
               </label>
               <input
                 className="flex h-9 w-full rounded-md border bg-transparent px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50 col-span-3"
-                id="name"
+                id="account"
                 defaultValue="7039256612"
               />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
-              <label className="text-sm font-medium leading-none text-right">
+              <label htmlFor="bank" className="text-sm font-medium leading-none text-right">
                 Bank
               </label>
               <input
                 className="flex h-9 w-full rounded-md border bg-transparent px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50 col-span-3"
-                id="username"
+                id="bank"
                 defaultValue="Opay Bank"
               />
             </div>
@@ -64,4 +65,4 @@ const ModalButton: React.FC = () => {
   )
 }
 
-export default ModalButton;
+export default ModalButton

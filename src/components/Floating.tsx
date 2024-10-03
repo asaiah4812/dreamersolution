@@ -4,11 +4,7 @@ import {
   IconBrandGithub,
   IconBrandX,
   IconExchange,
-  IconHome,
-  IconNewSection,
-  IconTerminal2,
 } from "@tabler/icons-react";
-import Image from "next/image";
 import { Dribbble, Facebook, Instagram, Linkedin } from "lucide-react";
 
 export function FloatingDockDemo() {

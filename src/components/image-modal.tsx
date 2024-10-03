@@ -1,8 +1,6 @@
 "use client"
 import React, { useEffect, useId, useState } from 'react'
 import { AnimatePresence, motion, MotionConfig } from 'framer-motion'
-import { cn } from '@/lib/utils'
-import { useMediaQuery } from '@/hooks/use-media-query'
 import { XIcon } from 'lucide-react'
 import { createPortal } from 'react-dom'
 
@@ -17,7 +15,7 @@ const transition = {
 }
 export function MediaModal({ imgSrc, videoSrc, className }: IMediaModal) {
   const [isMediaModalOpen, setIsMediaModalOpen] = useState(false)
-  const isDesktop = useMediaQuery('(min-width:768px)')
+  // const isDesktop = useMediaQuery('(min-width:768px)')
   const uniqueId = useId()
 
   useEffect(() => {
@@ -44,7 +42,7 @@ export function MediaModal({ imgSrc, videoSrc, className }: IMediaModal) {
         <>
           <motion.div
             // @ts-ignore
-            className="w-full h-full flex relative  flex-col overflow-hidden border    dark:bg-black bg-gray-300 hover:bg-gray-200 dark:hover:bg-gray-950"
+            className="w-full h-full flex relative cursor-pointer flex-col overflow-hidden border  bg-gray-300 hover:bg-gray-200"
             layoutId={`dialog-${uniqueId}`}
             style={{
               borderRadius: '12px',

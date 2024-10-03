@@ -1,4 +1,5 @@
-`use client`
+'use client'
+
 import React, {
   createContext,
   useContext,
@@ -15,7 +16,7 @@ interface DrawerContextProps {
 
 const DrawerContext = createContext<DrawerContextProps | undefined>(undefined)
 
-const useSidebarDrawer = () => {
+export const useSidebarDrawer = () => {
   const context = useContext(DrawerContext)
   if (!context) {
     throw new Error('useDrawer must be used within a DrawerProvider')
@@ -27,7 +28,7 @@ interface DrawerSidebarProps {
   children: ReactNode
   open?: boolean
   setOpen?: (open: boolean) => void
-  drawerBtn?:any | null
+  drawerBtn?: (() => React.ReactNode) | null
 }
 
 export function HeaderDrawer({
@@ -56,30 +57,27 @@ export function HeaderDrawer({
       mediaQuery.removeEventListener('change', handleMediaChange)
     }
   }, [])
-console.log(drawerBtn);
 
   return (
     <DrawerContext.Provider value={{ open, setOpen }}>
-      <>
-        <VaulHeader.Root
-          open={open}
-          direction="top"
-          onOpenChange={setOpen}
-          dismissible={isDesktop ? false : true}
-        >
-          {drawerBtn &&
-      <VaulHeader.Trigger asChild>
-        {drawerBtn()}
-      </VaulHeader.Trigger>
-      }
-          <VaulHeader.Portal>
-            <VaulHeader.Overlay className="fixed inset-0 dark:bg-black/40 bg-white/50 backdrop-blur-sm z-50  " />
-            <VaulHeader.Content className="dark:bg-gray-900 bg-white  border-b z-50 w-full h-fit py-3 fixed top-0 left-0">
-              {children}
-            </VaulHeader.Content>
-          </VaulHeader.Portal>
-        </VaulHeader.Root>
-      </>
+      <VaulHeader.Root
+        open={open}
+        direction="top"
+        onOpenChange={setOpen}
+        dismissible={!isDesktop}
+      >
+        {drawerBtn && (
+          <VaulHeader.Trigger asChild>
+            {drawerBtn()}
+          </VaulHeader.Trigger>
+        )}
+        <VaulHeader.Portal>
+          <VaulHeader.Overlay className="fixed inset-0 dark:bg-black/40 bg-white/50 backdrop-blur-sm z-50" />
+          <VaulHeader.Content className="bg-white border-b z-50 w-full h-fit py-3 fixed top-0 left-0">
+            {children}
+          </VaulHeader.Content>
+        </VaulHeader.Portal>
+      </VaulHeader.Root>
     </DrawerContext.Provider>
   )
 }
@@ -87,4 +85,3 @@ console.log(drawerBtn);
 export function DrawerContent({ children }: { children: ReactNode }) {
   return <>{children}</>
 }
-

@@ -8,7 +8,7 @@ import useNewsLetter from '@/lab/components/drawer/hooks/useNewsLetter'
 
 const Footer = () => {
   const container = useRef<HTMLDivElement>(null)
-  const [Send, clientData] = useNewsLetter()
+  const [Send] = useNewsLetter()
   const [openPopup, setOpenPopUp] = useState(false)
   const ref = useRef(null)
   const isInView = useInView(ref)

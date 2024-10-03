@@ -5,29 +5,15 @@ import MarqueeDemo from "@/components/testimonials";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import project from '../lib/project.json';
 import { Tools } from "@/components/Tools";
-import Link from "next/link";
-import { ChevronRight } from "lucide-react";
 import TextAnimation from "@/components/TextAnime";
 import Button from "@/components/Button";
-
-interface ProTextProps {
-  id: number;
-  title: string;
-  url: string;
-  src: string;
-  src1: string;
-  src2: string;
-  src3: string;
-  desc: string;
-  shortDesc: string;
-  price: number;
-}
+import { ThreeProps } from "@/lib/interface";
 
 
 
 
 export default function Home() {
-  const projects:ProTextProps[] = project.projects.slice(0, 3);  
+  const projects:ThreeProps[] = project.projects.slice(0, 3);  
   return (
     <div className="mt-[8rem]">
       <div className="text-center w-[95%] md:w-[70%] xl:w-[60%] mx-auto py-3">
@@ -36,12 +22,12 @@ export default function Home() {
       </div>
       <section>
 
-        <div className="flex items-center flex-col md:flex-row gap-x-4  w-[80%] mx-auto">
+        <div className="flex items-center justify-center flex-col flex-wrap md:flex-row gap-x-4  w-[80%] mx-auto">
           {
             projects.map(project => (
               <ThreeDCardDemo
               key={project.id}
-              href={project.url}
+              url={project.url}
               title={project.title}
               src={project.src}
               desc={project.shortDesc}

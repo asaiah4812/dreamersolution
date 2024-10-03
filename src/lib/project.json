@@ -11,7 +11,7 @@
         "src3": "/project/project1/project3.png",
         "shortDesc": "Build with Django with admin Panel",
         "desc": "BetKing: Your Ultimate Sports Betting Destination. Experience the thrill of sports betting with our innovative platform. From live betting to virtual sports, BetKing offers a wide range of options to cater to all betting enthusiasts.  Our advanced features, such as live streaming and in-play betting, give you the edge you need to make informed decisions. With BetKing, you're not just betting; you're part of the action.",
-        "url": "/project/Project1",
+        "url": "/project/betking-website",
         "price": 20000
     },
     {
@@ -23,7 +23,7 @@
         "src3": "/project/project2/project3.png",
         "shortDesc": "Development with django with authentication Admin Dashboard",
         "desc": "Nobis Eye Center Hospital Management System is a comprehensive software solution designed to streamline operations and improve efficiency at Nobis Eye Center. By automating tasks such as patient registration, appointment scheduling, medical record management, and billing, the system helps to enhance patient care and reduce administrative burdens. Our user-friendly software simplifies patient registration, appointment scheduling, and medical record management. With advanced features like electronic health records (EHRs) and patient portals, we empower patients to take an active role in their healthcare.",
-        "url": "/project/Project2",
+        "url": "/project/nobis-eye-center-website",
         "price": 25000
     },
     {
@@ -35,7 +35,7 @@
         "src3": "/project/project3/project3.png",
         "shortDesc": "A home Service Website Build with Python",
         "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur, quam vitae luctus faucibus, mauris ligula fermentum ex, a volutpat neque nunc at justo. Sed at nunc sed mauris pulvinar fermentum. In hac habitasse platea dictumst.",
-        "url": "/project/Project3",
+        "url": "/project/home-service-website",
         "price": 18000
     },
     {
@@ -47,7 +47,7 @@
         "src3": "/project/project4/project3.png",
         "shortDesc": "Ecommerce store with add to Cart functionality",
         "desc": "A Django-based e-commerce website with admin is a web application built using the Python Django framework, specifically designed to facilitate online shopping. The admin interface is a powerful tool within this setup, allowing administrators to manage various aspects of the website efficiently. Product Management: Admins can add, edit, and remove products, including details like name, description, price, images, and categories. Product Variations: Handle product variations (e.g., size, color) to offer diverse options.Inventory Tracking: Maintain accurate stock levels to avoid out-of-stock situations.",
-        "url": "/project/Project4",
+        "url": "/project/dreamer-ecommerce-store",
         "price": 30000
     },
     {
@@ -59,7 +59,7 @@
         "src3": "/project/project5/project3.png",
         "shortDesc": "description",
         "desc": "A Babque website built with Next.js and Django offers a powerful and efficient solution for creating a dynamic and scalable online platform. Here's a breakdown of how these technologies can be combined to achieve your goals:Robust Backend: Django provides a solid foundation for building the backend of your Babque website, handling tasks like user authentication, database interactions, and API endpoints.",
-        "url": "/project/Project5",
+        "url": "/project/babeque-website",
         "price": 27000
     },
     {
@@ -83,7 +83,7 @@
         "src3": "/project/project7/project3.png",
         "shortDesc": "Courage Hospital Management System",
         "desc": "The Courage Hospital Management System is a comprehensive software solution designed to streamline operations and enhance patient care at Courage Hospital. This user-friendly system offers a wide range of features Efficiently manage patient records, appointments, and medical history.",
-        "url": "/project/Project7",
+        "url": "/project/courage-hospital-management-system",
         "price": 29000
     },
     {
@@ -95,7 +95,7 @@
         "src3": "/project/project8/project3.png",
         "shortDesc": "Student Content Management System With Ai Integration",
         "desc": "The Courage Hospital Management System is a comprehensive software solution designed to streamline operations and enhance patient care at Courage Hospital. This user-friendly system offers a wide range of features Efficiently manage patient records, appointments, and medical history.",
-        "url": "/project/Project8",
+        "url": "/project/content-management",
         "price": 25000
     }
 ]

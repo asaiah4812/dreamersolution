@@ -1,14 +1,13 @@
 import React from 'react';
 
-// Inline implementation of the cn function
-function cn(...args: (string | boolean | undefined | null | { [key: string]: any })[]): string {
+// Improved type-safe implementation of the cn function
+function cn(...args: (string | boolean | undefined | null | Record<string, boolean | undefined>)[]): string {
   return args
     .flat()
     .filter(Boolean)
     .map((arg) => {
       if (typeof arg === 'string') return arg;
 
-      // Add a type guard to ensure arg is an object before calling Object.entries
       if (typeof arg === 'object' && arg !== null) {
         return Object.entries(arg)
           .filter(([, value]) => Boolean(value))
@@ -16,19 +15,16 @@ function cn(...args: (string | boolean | undefined | null | { [key: string]: any
           .join(' ');
       }
 
-      return ''; // Return an empty string if arg is not a valid type
+      return '';
     })
     .join(' ');
 }
 
-interface MarqueeProps {
-  className?: string
+interface MarqueeProps extends React.HTMLAttributes<HTMLDivElement> {
   reverse?: boolean
   pauseOnHover?: boolean
-  children?: React.ReactNode
   vertical?: boolean
   repeat?: number
-  [key: string]: any
 }
 
 export default function Marquee({
@@ -53,7 +49,7 @@ export default function Marquee({
       )}
     >
       {Array(repeat)
-        .fill(0)
+        .fill(null)
         .map((_, i) => (
           <div
             key={i}

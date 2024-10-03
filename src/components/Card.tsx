@@ -8,7 +8,7 @@ import { ThreeProps } from "@/lib/interface";
 
 
 
-export function ThreeDCardDemo({src, title, desc, href, price}: ThreeProps) {
+export function ThreeDCardDemo({src, title, desc, url, price}: ThreeProps) {
   return (
     <CardContainer className="inter-var">
       <CardBody className="bg-gray-50 relative group/card w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
@@ -47,7 +47,7 @@ export function ThreeDCardDemo({src, title, desc, href, price}: ThreeProps) {
           <CardItem
             translateZ={20}
             as={Link}
-            href={href}
+            href={url}
             className="px-4 py-2 rounded-xl bg-black text-white text-xs font-bold"
           >
             Check me out

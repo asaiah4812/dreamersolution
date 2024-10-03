@@ -1,5 +1,6 @@
 import React from 'react';
 import Marquee from './marquee';
+import Image from 'next/image';
 
 // Inline implementation of the cn function
 function cn(...classes: (string | boolean | undefined | null)[]): string {
@@ -38,7 +39,7 @@ const ReviewCard = ({
       )}
     >
       <div className="flex flex-row items-center gap-2">
-        <img className="rounded-full" width="32" height="32" alt="" src={img} />
+        <Image className="rounded-full" width={30} height={30} alt="" src={img} />
         <div className="flex flex-col">
           <figcaption className="text-sm font-medium">
             {name}

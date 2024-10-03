@@ -9,10 +9,6 @@ interface ProTextProps {
   title: string;
   url: string;
   src: string;
-  src1: string;
-  src2: string;
-  src3: string;
-  desc: string;
   shortDesc: string;
   price: number;
 }
@@ -28,7 +24,7 @@ const Projects = () => {
     projects.map(project => (
       <ThreeDCardDemo
       key={project.id}
-      href={project.url}
+      url={project.url}
       title={project.title}
       src={project.src}
       desc={project.shortDesc}
