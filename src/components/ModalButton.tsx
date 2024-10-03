@@ -40,6 +40,16 @@ const ModalButton: React.FC = () => {
               />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
+              <label htmlFor="name" className="text-sm font-medium leading-none text-right">
+                Name
+              </label>
+              <input
+                className="flex h-9 w-full rounded-md border bg-transparent px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50 col-span-3"
+                id="name"
+                defaultValue="Henson Asaiah Henson"
+              />
+            </div>
+            <div className="grid grid-cols-4 items-center gap-4">
               <label htmlFor="bank" className="text-sm font-medium leading-none text-right">
                 Bank
               </label>

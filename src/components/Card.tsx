@@ -4,11 +4,17 @@ import Image from "next/image";
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 import Link from "next/link";
-import { ThreeProps } from "@/lib/interface";
+
+interface MeProps {
+  src: string;
+  title: string;
+  desc: string;
+  url: string;
+  price: number;
+}
 
 
-
-export function ThreeDCardDemo({src, title, desc, url, price}: ThreeProps) {
+export function ThreeDCardDemo({src, title, desc, url, price}: MeProps) {
   return (
     <CardContainer className="inter-var">
       <CardBody className="bg-gray-50 relative group/card w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">

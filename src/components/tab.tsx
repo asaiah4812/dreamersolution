@@ -1,4 +1,3 @@
-// @ts-nocheck
 'use client'
 
 import { cn } from '@/lib/utils'
@@ -11,6 +10,7 @@ import React, {
   useState,
   isValidElement,
 } from 'react'
+
 interface TabContextType {
   activeTab: string
   setActiveTab: (value: string) => void
@@ -21,6 +21,7 @@ interface TabContextType {
   setPrevIndex: (value: number) => void
   tabsOrder: string[]
 }
+
 const TabContext = createContext<TabContextType | undefined>(undefined)
 
 export const useTabs = () => {
@@ -38,22 +39,21 @@ interface TabsProviderProps {
   hover?: boolean
 }
 
-export const TabsProvider = ({
+export const TabsProvider: React.FC<TabsProviderProps> = ({
   children,
   defaultValue,
   wobbly = true,
   hover = false,
-}: TabsProviderProps) => {
+}) => {
   const [activeTab, setActiveTab] = useState(defaultValue)
   const [prevIndex, setPrevIndex] = useState(0)
   const [tabsOrder, setTabsOrder] = useState<string[]>([])
+
   useEffect(() => {
     const order: string[] = []
-    children?.map((child) => {
-      if (isValidElement(child)) {
-        if (child.type === TabsContent) {
-          order.push(child.props.value)
-        }
+    React.Children.forEach(children, (child) => {
+      if (isValidElement(child) && child.type === TabsContent) {
+        order.push(child.props.value)
       }
     })
     setTabsOrder(order)
@@ -77,7 +77,13 @@ export const TabsProvider = ({
   )
 }
 
-export const TabsBtn = ({ children, className, value }: any) => {
+interface TabsBtnProps {
+  children: ReactNode
+  className?: string
+  value: string
+}
+
+export const TabsBtn: React.FC<TabsBtnProps> = ({ children, className, value }) => {
   const {
     activeTab,
     setPrevIndex,
@@ -94,103 +100,95 @@ export const TabsBtn = ({ children, className, value }: any) => {
   }
 
   return (
-    <>
-      <>
-        <motion.div
-          className={cn(
-            `cursor-pointer sm:p-2 p-1 sm:px-4 px-2 rounded-md relative `,
-            className
-          )}
-          onFocus={() => {
-            hover && handleClick()
-          }}
-          onMouseEnter={() => {
-            hover && handleClick()
-          }}
-          onClick={handleClick}
-        >
-          {children}
+    <motion.div
+      className={cn(
+        `cursor-pointer sm:p-2 p-1 sm:px-4 px-2 rounded-md relative `,
+        className
+      )}
+      onFocus={hover ? handleClick : undefined}
+      onMouseEnter={hover ? handleClick : undefined}
+      onClick={handleClick}
+    >
+      {children}
 
-          {activeTab === value && (
-            <AnimatePresence mode="wait">
-              <motion.div
-                transition={{
-                  layout: {
-                    duration: 0.2,
-                    ease: 'easeInOut',
-                    delay: 0.2,
-                  },
-                }}
-                layoutId={defaultValue}
-                className="absolute w-full h-full left-0 top-0  bg-white rounded-md  z-[1]"
-              />
-            </AnimatePresence>
-          )}
+      {activeTab === value && (
+        <AnimatePresence mode="wait">
+          <motion.div
+            transition={{
+              layout: {
+                duration: 0.2,
+                ease: 'easeInOut',
+                delay: 0.2,
+              },
+            }}
+            layoutId={defaultValue}
+            className="absolute w-full h-full left-0 top-0  bg-white rounded-md  z-[1]"
+          />
+        </AnimatePresence>
+      )}
 
-          {wobbly ? (
-            <>
-              {activeTab === value && (
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    transition={{
-                      layout: {
-                        duration: 0.4,
-                        ease: 'easeInOut',
-                        delay: 0.04,
-                      },
-                    }}
-                    layoutId={defaultValue}
-                    className="absolute w-full h-full left-0 top-0 bg-white rounded-md  z-[1] tab-shadow"
-                  />
-                </AnimatePresence>
-              )}
-              {activeTab === value && (
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    transition={{
-                      layout: {
-                        duration: 0.4,
-                        ease: 'easeOut',
-                        delay: 0.2,
-                      },
-                    }}
-                    layoutId={`${defaultValue}b`}
-                    className="absolute w-full h-full left-0 top-0 bg-white rounded-md  z-[1] tab-shadow"
-                  />
-                </AnimatePresence>
-              )}
-            </>
-          ) : (
-            <></>
-          )}
-        </motion.div>
-      </>
-    </>
+      {wobbly && activeTab === value && (
+        <>
+          <AnimatePresence mode="wait">
+            <motion.div
+              transition={{
+                layout: {
+                  duration: 0.4,
+                  ease: 'easeInOut',
+                  delay: 0.04,
+                },
+              }}
+              layoutId={defaultValue}
+              className="absolute w-full h-full left-0 top-0 bg-white rounded-md  z-[1] tab-shadow"
+            />
+          </AnimatePresence>
+          <AnimatePresence mode="wait">
+            <motion.div
+              transition={{
+                layout: {
+                  duration: 0.4,
+                  ease: 'easeOut',
+                  delay: 0.2,
+                },
+              }}
+              layoutId={`${defaultValue}b`}
+              className="absolute w-full h-full left-0 top-0 bg-white rounded-md  z-[1] tab-shadow"
+            />
+          </AnimatePresence>
+        </>
+      )}
+    </motion.div>
   )
 }
 
-export const TabsContent = ({ children, className, value, yValue }: any) => {
+interface TabsContentProps {
+  children: ReactNode
+  className?: string
+  value: string
+  yValue?: number
+}
+
+export const TabsContent: React.FC<TabsContentProps> = ({ children, className, value, yValue }) => {
   const { activeTab, tabsOrder, prevIndex } = useTabs()
   const isForward = tabsOrder.indexOf(activeTab) > prevIndex
+
   return (
-    <>
-      <AnimatePresence mode="popLayout">
-        {activeTab === value && (
-          <motion.div
-            initial={{ opacity: 0, y: yValue ? (isForward ? 10 : -10) : 0 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: yValue ? (isForward ? -50 : 50) : 0 }}
-            transition={{
-              duration: 0.3,
-              ease: 'easeInOut',
-              delay: 0.5,
-            }}
-            className={cn(' p-2 px-4 rounded-md relative', className)}
-          >
-            {activeTab === value ? children : null}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+    <AnimatePresence mode="popLayout">
+      {activeTab === value && (
+        <motion.div
+          initial={{ opacity: 0, y: yValue ? (isForward ? 10 : -10) : 0 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: yValue ? (isForward ? -50 : 50) : 0 }}
+          transition={{
+            duration: 0.3,
+            ease: 'easeInOut',
+            delay: 0.5,
+          }}
+          className={cn(' p-2 px-4 rounded-md relative', className)}
+        >
+          {children}
+        </motion.div>
+      )}
+    </AnimatePresence>
   )
 }

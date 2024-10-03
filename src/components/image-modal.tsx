@@ -3,19 +3,21 @@ import React, { useEffect, useId, useState } from 'react'
 import { AnimatePresence, motion, MotionConfig } from 'framer-motion'
 import { XIcon } from 'lucide-react'
 import { createPortal } from 'react-dom'
+import Image from 'next/image'
 
 interface IMediaModal {
   imgSrc?: string
   videoSrc?: string
   className?: string
 }
+
 const transition = {
   type: 'spring',
   duration: 0.4,
 }
-export function MediaModal({ imgSrc, videoSrc, className }: IMediaModal) {
+
+export function MediaModal({ imgSrc, videoSrc }: IMediaModal) {
   const [isMediaModalOpen, setIsMediaModalOpen] = useState(false)
-  // const isDesktop = useMediaQuery('(min-width:768px)')
   const uniqueId = useId()
 
   useEffect(() => {
@@ -36,12 +38,12 @@ export function MediaModal({ imgSrc, videoSrc, className }: IMediaModal) {
       document.removeEventListener('keydown', handleKeyDown)
     }
   }, [isMediaModalOpen])
+
   return (
     <>
       <MotionConfig transition={transition}>
         <>
           <motion.div
-            // @ts-ignore
             className="w-full h-full flex relative cursor-pointer flex-col overflow-hidden border  bg-gray-300 hover:bg-gray-200"
             layoutId={`dialog-${uniqueId}`}
             style={{
@@ -56,10 +58,13 @@ export function MediaModal({ imgSrc, videoSrc, className }: IMediaModal) {
                 layoutId={`dialog-img-${uniqueId}`}
                 className="w-full h-full"
               >
-                <img
+                <Image
+                  title="Click to View Image"
                   src={imgSrc}
+                  width={450}
+                  height={300}
                   alt="A desk lamp designed by Edouard Wilfrid Buquet in 1925. It features a double-arm design and is made from nickel-plated brass, aluminium and varnished wood."
-                  className=" w-full object-cover h-full"
+                  className="w-full md:w-[300px] object-cover h-full"
                 />
               </motion.div>
             )}
@@ -74,7 +79,7 @@ export function MediaModal({ imgSrc, videoSrc, className }: IMediaModal) {
                   loop
                   className="h-full w-full object-cover  rounded-sm"
                 >
-                  <source src={videoSrc!} type="video/mp4" />
+                  <source src={videoSrc} type="video/mp4" />
                 </video>
               </motion.div>
             )}
@@ -112,8 +117,11 @@ export function MediaModal({ imgSrc, videoSrc, className }: IMediaModal) {
                         layoutId={`dialog-img-${uniqueId}`}
                         className="w-full h-full"
                       >
-                        <img
+                        <Image
+                          title="Click to View Image"
                           src={imgSrc}
+                          width={450}
+                          height={300}
                           alt=""
                           className="h-full w-full object-cover"
                         />
@@ -131,7 +139,7 @@ export function MediaModal({ imgSrc, videoSrc, className }: IMediaModal) {
                           controls
                           className="h-full w-full object-cover  rounded-sm"
                         >
-                          <source src={videoSrc!} type="video/mp4" />
+                          <source src={videoSrc} type="video/mp4" />
                         </video>
                       </motion.div>
                     )}

@@ -57,7 +57,7 @@ const DetailPage: React.FC<DetailPageProps> = ({ params }) => {
               <p className="font-bold">Short Description:</p>
               <p>{pro.shortDesc}</p>
               <p className="font-bold mt-4">Full Description:</p>
-              <p>{pro.desc}</p>
+              <p className='text-justify'>{pro.desc}</p>
               <p className="font-bold mt-4">Price:</p>
               <p>${pro.price}</p>
               <div className="mt-4">
