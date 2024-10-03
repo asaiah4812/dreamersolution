@@ -97,6 +97,18 @@
         "desc": "The Courage Hospital Management System is a comprehensive software solution designed to streamline operations and enhance patient care at Courage Hospital. This user-friendly system offers a wide range of features Efficiently manage patient records, appointments, and medical history.",
         "url": "/project/content-management",
         "price": 25000
+    },
+    {
+        "id":9,
+        "title": "Inventory management System",
+        "src": "/project/project9/project.png",
+        "src1": "/project/project9/project1.png",
+        "src2": "/project/project9/project2.png",
+        "src3": "/project/project9/project3.png",
+        "shortDesc": "Inventory management System Build with Python django",
+        "desc": "Introducing Dreamerinvento, a comprehensive inventory management solution built with Django. Tailored for [target audience], our platform empowers businesses to streamline their operations and maximize efficiency. With robust features like real-time stock tracking, automated purchase order generation, and insightful reporting, Dreamerinvento simplifies inventory management and reduces costs. Our user-friendly interface ensures easy navigation and data entry, while advanced analytics provide valuable insights into inventory performance. Whether you're managing a small retail store or a large warehouse, our system offers the flexibility and scalability to meet your specific needs. Experience the power of Dreamerinvento and unlock the potential of your inventory management.",
+        "url": "/project/inventory-management-system",
+        "price": 17000
     }
 ]
 
