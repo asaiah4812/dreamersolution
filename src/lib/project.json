@@ -57,21 +57,21 @@
         "src1": "/project/project5/project1.png",
         "src2": "/project/project5/project2.png",
         "src3": "/project/project5/project3.png",
-        "shortDesc": "description",
+        "shortDesc": "Babeque Website with Paystack Payment Gateway",
         "desc": "A Babque website built with Next.js and Django offers a powerful and efficient solution for creating a dynamic and scalable online platform. Here's a breakdown of how these technologies can be combined to achieve your goals:Robust Backend: Django provides a solid foundation for building the backend of your Babque website, handling tasks like user authentication, database interactions, and API endpoints.",
         "url": "/project/babeque-website",
         "price": 27000
     },
     {
         "id":6,
-        "title": "Project 6",
+        "title": "House Rentals Website",
         "src": "/project/project6/project.png",
         "src1": "/project/project6/project1.png",
         "src2": "/project/project6/project2.png",
         "src3": "/project/project6/project3.png",
-        "shortDesc": "description",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur, quam vitae luctus faucibus, mauris ligula fermentum ex, a volutpat neque nunc at justo. Sed at nunc sed mauris pulvinar fermentum. In hac habitasse platea dictumst.",
-        "url": "/project/Project6",
+        "shortDesc": "Dreamer house rentals website with Nextjs",
+        "desc": "Discover your dream home away from home with Dreamer BNB, a premier online platform for finding and booking comfortable accommodations. Our user-friendly interface connects property owners with discerning travelers seeking unique and affordable housing options. Whether you're planning a vacation, a business trip, or a long-term stay, Dreamer BNB offers a wide range of properties to suit your needs, from cozy apartments to luxurious villas. Our platform features detailed property listings, secure online booking, and reliable customer support to ensure a hassle-free experience. Experience the convenience and comfort of Dreamer BNB and find your perfect home away from home.",
+        "url": "/project/house-rentals-website",
         "price": 18000
     },
     {

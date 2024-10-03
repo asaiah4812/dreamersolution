@@ -11,16 +11,16 @@ function Tab() {
         <div className="flex justify-center mt-2">
           <div className="flex items-center w-fit bg-gray-200 p-1 text-black rounded-md border">
             <TabsBtn value="design">
-              <span className="relative text-sm md:text-md z-[2] uppercase">Portfolio</span>
+              <span className="relative text-xs sm:text-sm md:text-md z-[2] uppercase">Portfolio</span>
             </TabsBtn>
             <TabsBtn value="collaborate">
-              <span className="relative text-sm md:text-md z-[2] uppercase">CodeAcademy</span>
+              <span className="relative text-xs sm:text-sm md:text-md z-[2] uppercase">CodeAcademy</span>
             </TabsBtn>
             <TabsBtn value="share">
-              <span className="relative text-sm md:text-md z-[2] uppercase">CryptoApp</span>
+              <span className="relative text-xs sm:text-sm md:text-md z-[2] uppercase">CryptoApp</span>
             </TabsBtn>
             <TabsBtn value="publish">
-              <span className="relative text-sm md:text-md z-[2] uppercase">publish</span>
+              <span className="relative text-xs sm:text-sm md:text-md z-[2] uppercase">publish</span>
             </TabsBtn>
           </div>
         </div>
