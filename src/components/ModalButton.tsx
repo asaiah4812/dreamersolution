@@ -63,7 +63,7 @@ const ModalButton: React.FC = () => {
           <div className="mt-4">
             <button
               onClick={() => setModalOpen(false)}
-              className="w-full p-3 bg-black dark:bg-white text-white"
+              className="w-full p-3 bg-black text-white"
               type="button"
             >
               Got it, thanks!

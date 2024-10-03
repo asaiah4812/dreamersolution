@@ -71,7 +71,7 @@ export function FramerModal({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-20 flex flex-col items-center justify-center w-full h-screen dark:bg-black/90 bg-white/90 backdrop-blur-sm cursor-zoom-out"
+            className="fixed inset-0 z-20 flex flex-col items-center justify-center w-full h-screen bg-white/90 backdrop-blur-sm cursor-zoom-out"
             onClick={handleClose}
           >
             <motion.div
