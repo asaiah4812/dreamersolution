@@ -199,7 +199,7 @@ const Footer = () => {
           </div>
           <div className="flex md:flex-row flex-col-reverse gap-3 justify-between py-2">
             <span className="font-medium">
-              &copy; 2023 DreamerWebdev. All Rights Reserved.
+              &copy; 2024 DreamerWebdev. All Rights Reserved.
             </span>
             <a href="https://hensonport.vercel.app" className="font-semibold">
               Privacy Policy
