@@ -37,26 +37,39 @@ const Footer = () => {
   return (
     <>
       <Toast.Provider>
-        <Toast.Root
-          className="ToastRoot"
-          open={openPopup}
-          onOpenChange={setOpenPopUp}
-        >
-          <Toast.Title className="ToastTitle">
-            We Received Your Message, Thanks
-          </Toast.Title>
-          <Toast.Action
-            className="ToastAction"
-            asChild
-            altText="Goto schedule to undo"
-          >
-            <button className="bg-white text-black px-3 py-1 rounded-lg">
-              ok
-            </button>
-          </Toast.Action>
-        </Toast.Root>
-        <Toast.Viewport className="ToastViewport" />
-      </Toast.Provider>
+  <Toast.Root
+    className="fixed bottom-4 right-4 z-50 bg-gray-800 text-white rounded-lg shadow-lg p-4 flex items-center justify-between max-w-sm w-full"
+    open={openPopup}
+    onOpenChange={setOpenPopUp}
+  >
+    <div className="flex items-center">
+      <svg
+        className="w-6 h-6 text-green-400 mr-2"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path d="M5 13l4 4L19 7"></path>
+      </svg>
+      <Toast.Title className="text-sm font-medium">
+        We Received Your Message, Thanks
+      </Toast.Title>
+    </div>
+    <Toast.Action
+      className="ml-4"
+      asChild
+      altText="Close notification"
+    >
+      <button className="bg-white text-gray-800 px-3 py-1 rounded-md text-sm font-medium transition-colors hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+        OK
+      </button>
+    </Toast.Action>
+  </Toast.Root>
+  <Toast.Viewport className="fixed bottom-0 right-0 flex flex-col p-4 gap-2 w-full max-w-sm m-0 list-none z-50 outline-none" />
+</Toast.Provider>
 
       <div
         className="relative h-full sm:pt-14 pt-8 bg-[#f7f7f7] text-black"
